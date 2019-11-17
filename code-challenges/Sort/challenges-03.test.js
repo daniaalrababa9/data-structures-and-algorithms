@@ -47,6 +47,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+  return arr.sort((a,b)=>(a.toLowerCase()<b.toLowerCase()?-1:1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +56,7 @@ CHALLENGE 5
 Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
 
 Here is an example of the input:
-[
+
   {name: 'Sweatshirt', price: 45},
   {name: 'Bookmark', price: 2.50},
   {name: 'Tote bag', price: 15}
