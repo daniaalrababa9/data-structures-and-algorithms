@@ -1,5 +1,7 @@
 'use strict';
 
+import { stringLiteral } from "@babel/types";
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -65,6 +67,7 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  return arr.sort((a,b)=> a.price-b.price);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,6 +80,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   // Solution code here...
+  return arr.sort((a,b)=> string(a).length-string(b).length);
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -99,6 +103,7 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
+  return arr.sort((a,b)=>(a.lastName<b.lastName ? -1:1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,6 +118,7 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
