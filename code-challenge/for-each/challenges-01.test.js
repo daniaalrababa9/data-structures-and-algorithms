@@ -11,6 +11,7 @@ Then, write a function named speaker that takes in a string and a callback funct
 const greeting = (word) => {
   // Solution code here...
   return word.toUpperCase();
+
 };
 
 const speaker = (message, callback) => {
@@ -33,15 +34,18 @@ Within the addNumbers function, invoke the callback function as many times as ne
 
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
+
 const addValues = (arr, value) => {
-  arr.push(value); 
+  // Solution code here...
+ arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  for (let i = 0; i < times; i++) { 
-      callback(arr, num);
-    }
-    return arr;
+  // Solution code here...
+  for (let i= 0 ; i<times ; i++){
+      callback(arr,num);
+  }
+  return arr ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,24 +61,29 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  if (num % 3 === 2) {
-      arr.pop();
-    } 
+  // Solution code here...
+if (num %3  ===  2){
+    arr.pop();
+}
 };
 
 const removeElements = (arr, callback) => {
-  for (let i = 0; i < arr.length; i++) {
-      callback(arr[i], arr);
-    }
-    return arr; 
+  // Solution code here...
+  for ( let i=0 ;i <arr.length;i++){
+      callback(arr[i],arr)
+  }
+  return arr ;
 };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
+
 const removeWithForEach = (arr, callback) => {
-  arr.forEach(Element =>  callback(Element,arr));
+  // Solution code here...
+  arr.forEach(value => callback(value,arr)  )
   return arr ;
 };
 
@@ -89,13 +98,14 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  arr.forEach(function (Element,index ,arr) {
-if (Element%3 === 2){
-  arr.pop();
-}  });
-return arr 
+  // Solution code here...
+ arr.forEach(function (value,idx,arr){
+     if  (value %3=== 2){
+         arr.pop();
+     }
+ }) 
+ return arr
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -114,18 +124,17 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
-
 const createList = (availableItems) => {
-  let list = [];
-  availableItems.forEach ((element) => {
-    if(element.available=== true ){
-    list.push(element.name);
-  }
-  });
-  return list ; 
- 
-};
+  // Solution code here...
+  let list =[];
+   availableItems.forEach((value)=>{
+       if(value.available === true){
+           list.push(value.name)
+       }
+   });
+return list ;
 
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -140,19 +149,24 @@ Iterate over the array using forEach to determine the output based on several ru
 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
+
 const fizzbuzz = (arr) => {
-  let fizzbuzzArray = [];
-  arr.forEach((element)=>{
-    if (element%3 === 0 && element%5 === 0){
-      fizzbuzzArray.push('Fizz Buzz');
-    }else if (element%3===0){
-      fizzbuzzArray.push ('Fizz') ;
-    }else if (element%5===0){
-      fizzbuzzArray.push('Buzz')
-    }else 
-    fizzbuzzArray.push(element)
+  // Solution code here...
+  let fizzbuzzArray =[];
+  arr.forEach((value) => {
+   if( value%3===0&&value%5===0){
+        fizzbuzzArray.push('Fizz Buzz');
+      }
+     else if(value%3===0){
+          fizzbuzzArray.push('Fizz') ;
+      }else if (value%5===0){
+          fizzbuzzArray.push('Buzz');
+      }else 
+          fizzbuzzArray.push(value)
+      
+
   })
-  return fizzbuzzArray// Solution code here...
+  return fizzbuzzArray;;
 };
 
 /* ------------------------------------------------------------------------------------------------

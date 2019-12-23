@@ -10,7 +10,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
-  return arr.map(val =>val.charAt(0).toUpperCase()+val.slice(1));
+  return arr.map(i=> i.charAt(0).toUpperCase()+i.slice(1))
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,6 +86,7 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  return arr.filter(i=> parseInt(i.mass)>77).map(i=>i.name).join(' - ')
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,6 +105,20 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  return arr.sort((a,b)=> {
+      if(a[property]<b[property]){
+          return -1
+
+      }
+      if(a[property]>b[property]){
+        return 1
+
+    }
+    if(a[property] === b[property]){
+        return 0
+
+    }
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,6 +135,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
 // Solution code here...
+return /^https:\/\//.test(url);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -143,6 +160,25 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  const helpCheck = (row1, col1, row2, col2, row3, col3) =>
+    board[row1][col1] === board[row2][col2] &&
+    board[row1][col1] === board[row3][col3] &&
+    board[row1][col1] !== '';
+  const toCheck = [
+    [0, 0, 0, 1, 0, 2],
+    [1, 0, 1, 1, 1, 2],
+    [2, 0, 2, 1, 2, 2],
+    [0, 0, 1, 0, 2, 0],
+    [0, 1, 1, 1, 2, 1],
+    [0, 2, 1, 2, 2, 2],
+    [0, 0, 1, 1, 2, 2],
+    [0, 2, 1, 1, 2, 0]
+  ];
+  let win = false;
+  toCheck.forEach(check => {
+    if (helpCheck(...check)) win = true;
+  });
+  return win;
 };
 
 /* ------------------------------------------------------------------------------------------------

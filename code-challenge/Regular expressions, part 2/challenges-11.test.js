@@ -32,6 +32,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 const validateEmail = (email) => {
   // Solution code here...
   return /^[\w\d]+(\.[\w\d]+)?@[\w\d]+\.(net|com|org)$/.test(email);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +58,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  return /^(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/.test(phoneNumber);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,6 +73,12 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 
 const findTagNames = elements => {
   // Solution code here...
+
+  let tags = [];
+  elements.forEach(str => {
+    tags = tags.concat(str.match(/\/\w+/g));
+  });
+  return tags;
 };
 
 /* ------------------------------------------------------------------------------------------------
